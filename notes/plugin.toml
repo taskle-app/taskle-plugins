@@ -1,0 +1,7 @@
+name = "notes"
+title = "Notes"
+description = "Attach a long-form note to a task, stored in the project's .taskle/notes."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+capabilities = ["read_documents", "read_files", "write_files", "open_externally"]

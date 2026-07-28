@@ -1,0 +1,7 @@
+name = "consolidated-view"
+title = "Consolidated View"
+description = "Shows the tasks of every document open in the current workspace."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+capabilities = ["read_documents"]

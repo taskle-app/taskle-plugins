@@ -1,0 +1,32 @@
+name = "todo-ai"
+title = "Todo AI"
+description = "Turns natural-language text from the Add bar into a structured task, on-device."
+version = "0.2.0"
+api_version = 1
+entry = "init.lua"
+capabilities = ["wasm"]
+
+[[resources]]
+name = "runtime"
+title = "Todo AI"
+description = "Turns natural-language text from the Add bar into a structured task, on-device."
+path = "resources/todo_ai_runtime.wasm"
+sha256 = "6859555a51cf4320da40fdc170f8d47cc4dec01ea3b62aff71b80c08514fbb3a"
+max_size = 1048576
+kind = "module"
+
+[[resources]]
+name = "model"
+title = "Todo AI"
+description = "Turns natural-language text from the Add bar into a structured task, on-device."
+path = "resources/model.bin"
+sha256 = "50c487cbe5a4bc1ce6d153dc677c23401cc5d18be8f6d162b57060713906ff9e"
+max_size = 1048576
+
+[[resources]]
+name = "model-manifest"
+title = "Todo AI"
+description = "Turns natural-language text from the Add bar into a structured task, on-device."
+path = "resources/manifest.json"
+sha256 = "79796f86682351ceedbdd5e3c5adb8c87aede6a269067686bbd064f0aa511543"
+max_size = 65536
