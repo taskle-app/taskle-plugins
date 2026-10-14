@@ -1,0 +1,7 @@
+name = "gdrive-sync"
+title = "Google Drive Sync"
+description = "Synchronizes local todo.txt files with Google Drive and detects post-write races."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+capabilities = ["network", "notify", "secrets", "timers"]

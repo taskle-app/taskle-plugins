@@ -1,0 +1,7 @@
+name = "kanban"
+title = "Kanban"
+description = "A board view of the open document, with tasks moved between columns by button."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+capabilities = []
