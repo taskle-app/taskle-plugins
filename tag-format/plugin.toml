@@ -1,0 +1,10 @@
+name = "tag-format"
+title = "Tag Format"
+description = "Rewrite and recolour projects, contexts and tags in the task list."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+# Rewrites the row's parts and keeps its rules in its own state namespace — both
+# the automation stage, so nothing here needs an approval prompt. It cannot touch
+# the task text: the host owns serialization and a hook only describes the row.
+capabilities = []

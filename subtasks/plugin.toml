@@ -1,0 +1,17 @@
+name = "subtasks"
+title = "Subtasks"
+description = "A parent/child task hierarchy, with rollup completion and indented display."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+# Nests, filters and edits tasks — all inside the automation stage, so it runs
+# untrusted (no capabilities requested).
+#
+# Not even `read_documents`, which nesting under a source that spans the open
+# documents would need: asking for it would put the whole plugin behind an
+# approval prompt — and behind an *unanswerable* one under `tsk`, where the
+# cascade-on-complete hook is the reason the plugin is there at all. The cost is
+# that a consolidated source switches the hierarchy off with a notice, which is
+# no worse than it being unavailable, and the grant can be asked for the day
+# cross-document nesting is worth a prompt.
+capabilities = []

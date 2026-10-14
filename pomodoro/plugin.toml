@@ -1,0 +1,9 @@
+name = "pomodoro"
+title = "Pomodoro"
+description = "Work in fixed intervals against one task and keep the count on it."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+# Timers and notifications come with the automation stage, so this plugin needs
+# no external capability and runs without an approval prompt.
+capabilities = []
