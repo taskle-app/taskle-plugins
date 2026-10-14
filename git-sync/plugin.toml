@@ -1,0 +1,11 @@
+name = "git-sync"
+title = "Git Sync"
+description = "Commits each linked todo.txt on its own and pushes it, fetching changes that touch only that file."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+# Shells out to `git` (run_process); keeps the remote and any credential in its
+# own encrypted namespace (secrets); writes the short-lived askpass helper that
+# hands the credential to git (write_files); checks once a minute whether
+# anything is linked (timers). All granted only once you trust this plugin.
+capabilities = ["notify", "run_process", "secrets", "timers", "write_files"]

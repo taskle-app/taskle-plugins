@@ -1,0 +1,9 @@
+name = "quick-add"
+title = "Quick Add"
+description = "Type a task the way you would say it: dates, recurrence and priority are parsed out of plain English."
+version = "0.1.0"
+api_version = 1
+entry = "init.lua"
+# Reads and rewrites the task being created — the automation stage covers both,
+# so this needs no external capability and no approval prompt.
+capabilities = []

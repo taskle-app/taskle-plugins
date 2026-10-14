@@ -1,0 +1,680 @@
+{
+  "architecture": "byte-embedding-inventory-conditioned-residual-dilated-conv",
+  "artifact_dtype": "int8-symmetric",
+  "config_sha256": "0895459052e3cd990da57e5e539f431126e430c7096f091dad8ba26701650cd6",
+  "dataset_manifest_sha256": "1a34c72af3c526a26ab8b4ed2fb555514ead393adda19b28981a657b00e298c3",
+  "dataset_sha256": "52538a822e09a4d7b4bea7983c67a6add9f0f4cb3795e4df223a902ec00f2a44",
+  "dataset_version": "todo-ai-synthetic-production-v1",
+  "float32_test_metrics": {
+    "byte_accuracy": 0.999277,
+    "bytes": 906166,
+    "entity_f1": 0.999196,
+    "entity_precision": 0.998944,
+    "entity_recall": 0.999447,
+    "exact_byte_sequence": 0.968171,
+    "examples": 12096,
+    "inventory_conditioning": {
+      "context_existing_byte_recall": 0.999877,
+      "context_match_false_field_rate": 0.000484,
+      "context_novel_byte_recall": 0.999785,
+      "project_existing_byte_recall": 0.999967,
+      "project_match_false_field_rate": 0.002033,
+      "project_novel_byte_recall": 0.99992
+    },
+    "outcome_accuracy": 1.0,
+    "priority_accuracy": 1.0,
+    "recurrence": {
+      "claimed_examples": 2232,
+      "exact": 0.96147,
+      "recurrence_anchor_kind_accuracy": 0.99504,
+      "recurrence_anchor_value_accuracy": 0.993882,
+      "recurrence_interval_accuracy": 1.0,
+      "recurrence_strictness_accuracy": 0.999917,
+      "recurrence_unit_accuracy": 0.999669
+    }
+  },
+  "labels": {
+    "path": "labels.json",
+    "sha256": "18b4b7387af38771da0d689d8a33db4cd833fef4bb12486d7493acd0281cd8d6"
+  },
+  "limitations": [
+    "trained only on deterministic synthetic data",
+    "not evaluated on the frozen human gold set",
+    "not calibrated for editor integration",
+    "not evaluated with human-authored existing project/context inventories",
+    "INT8 quantization is not yet qualified in the fixed WASM runtime",
+    "weights are not yet exported to the final runtime tensor layout"
+  ],
+  "model_version": "todo-ai-tiny-conv-0.2.0",
+  "parameter_count": 129459,
+  "quantization": {
+    "bucket_overrides": {},
+    "bucket_size": 2,
+    "dither_amplitude": 0.0,
+    "evaluation": "dequantized exact exported weights",
+    "max_code": 127,
+    "rounding": "nearest symmetric then symmetric toward-zero bucketing",
+    "scale": "per-tensor symmetric power-of-two range times bucket size",
+    "storage": "bucket index in INT8 with bucket folded into scale"
+  },
+  "runtime": {
+    "device": "Device(gpu, 0)",
+    "framework": "mlx",
+    "framework_version": "0.32.0",
+    "python_version": "3.14.6"
+  },
+  "schema_version": 1,
+  "test_metrics": {
+    "byte_accuracy": 0.999003,
+    "bytes": 906166,
+    "entity_f1": 0.99892,
+    "entity_precision": 0.998505,
+    "entity_recall": 0.999336,
+    "exact_byte_sequence": 0.957837,
+    "examples": 12096,
+    "inventory_conditioning": {
+      "context_existing_byte_recall": 0.999959,
+      "context_match_false_field_rate": 0.000969,
+      "context_novel_byte_recall": 0.999713,
+      "project_existing_byte_recall": 0.999868,
+      "project_match_false_field_rate": 0.003049,
+      "project_novel_byte_recall": 0.999866
+    },
+    "outcome_accuracy": 1.0,
+    "priority_accuracy": 1.0,
+    "recurrence": {
+      "claimed_examples": 2233,
+      "exact": 0.960591,
+      "recurrence_anchor_kind_accuracy": 0.994792,
+      "recurrence_anchor_value_accuracy": 0.993965,
+      "recurrence_interval_accuracy": 1.0,
+      "recurrence_strictness_accuracy": 1.0,
+      "recurrence_unit_accuracy": 0.999421
+    }
+  },
+  "training": {
+    "epoch_reports": [
+      {
+        "epoch": 1,
+        "mean_loss": 1.123956,
+        "selection_score": 0.304989,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.92959,
+          "bytes": 433430,
+          "entity_f1": 0.926744,
+          "entity_precision": 0.903432,
+          "entity_recall": 0.95129,
+          "exact_byte_sequence": 0.527333,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999645,
+            "context_match_false_field_rate": 0.02,
+            "context_novel_byte_recall": 0.98363,
+            "project_existing_byte_recall": 0.999487,
+            "project_match_false_field_rate": 0.030797,
+            "project_novel_byte_recall": 0.994914
+          },
+          "outcome_accuracy": 0.8195,
+          "priority_accuracy": 0.937027,
+          "recurrence": {
+            "claimed_examples": 726,
+            "exact": 0.082645,
+            "recurrence_anchor_kind_accuracy": 0.9845,
+            "recurrence_anchor_value_accuracy": 0.9775,
+            "recurrence_interval_accuracy": 0.937167,
+            "recurrence_strictness_accuracy": 0.992667,
+            "recurrence_unit_accuracy": 0.92
+          }
+        }
+      },
+      {
+        "epoch": 2,
+        "mean_loss": 0.31786,
+        "selection_score": 0.420792,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.960919,
+          "bytes": 433430,
+          "entity_f1": 0.956937,
+          "entity_precision": 0.94528,
+          "entity_recall": 0.968884,
+          "exact_byte_sequence": 0.619833,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999556,
+            "context_match_false_field_rate": 0.013333,
+            "context_novel_byte_recall": 0.990826,
+            "project_existing_byte_recall": 0.999854,
+            "project_match_false_field_rate": 0.009058,
+            "project_novel_byte_recall": 0.996286
+          },
+          "outcome_accuracy": 0.963167,
+          "priority_accuracy": 0.995995,
+          "recurrence": {
+            "claimed_examples": 708,
+            "exact": 0.221751,
+            "recurrence_anchor_kind_accuracy": 0.991167,
+            "recurrence_anchor_value_accuracy": 0.986167,
+            "recurrence_interval_accuracy": 0.9535,
+            "recurrence_strictness_accuracy": 0.997667,
+            "recurrence_unit_accuracy": 0.949833
+          }
+        }
+      },
+      {
+        "epoch": 3,
+        "mean_loss": 0.107524,
+        "selection_score": 0.63154,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.976979,
+          "bytes": 433430,
+          "entity_f1": 0.975034,
+          "entity_precision": 0.966433,
+          "entity_recall": 0.98379,
+          "exact_byte_sequence": 0.689167,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999822,
+            "context_match_false_field_rate": 0.005,
+            "context_novel_byte_recall": 0.994701,
+            "project_existing_byte_recall": 0.99978,
+            "project_match_false_field_rate": 0.005435,
+            "project_novel_byte_recall": 0.996857
+          },
+          "outcome_accuracy": 0.989,
+          "priority_accuracy": 0.999332,
+          "recurrence": {
+            "claimed_examples": 690,
+            "exact": 0.573913,
+            "recurrence_anchor_kind_accuracy": 0.995833,
+            "recurrence_anchor_value_accuracy": 0.987,
+            "recurrence_interval_accuracy": 0.973,
+            "recurrence_strictness_accuracy": 0.998,
+            "recurrence_unit_accuracy": 0.987667
+          }
+        }
+      },
+      {
+        "epoch": 4,
+        "mean_loss": 0.049868,
+        "selection_score": 0.7934,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.984962,
+          "bytes": 433430,
+          "entity_f1": 0.983819,
+          "entity_precision": 0.978042,
+          "entity_recall": 0.989665,
+          "exact_byte_sequence": 0.732333,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999911,
+            "context_match_false_field_rate": 0.001667,
+            "context_novel_byte_recall": 0.997232,
+            "project_existing_byte_recall": 0.999927,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.998514
+          },
+          "outcome_accuracy": 0.995333,
+          "priority_accuracy": 0.999777,
+          "recurrence": {
+            "claimed_examples": 694,
+            "exact": 0.854467,
+            "recurrence_anchor_kind_accuracy": 0.996667,
+            "recurrence_anchor_value_accuracy": 0.993167,
+            "recurrence_interval_accuracy": 0.9945,
+            "recurrence_strictness_accuracy": 0.9995,
+            "recurrence_unit_accuracy": 0.994667
+          }
+        }
+      },
+      {
+        "epoch": 5,
+        "mean_loss": 0.024944,
+        "selection_score": 0.850877,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.989927,
+          "bytes": 433430,
+          "entity_f1": 0.989309,
+          "entity_precision": 0.985168,
+          "entity_recall": 0.993484,
+          "exact_byte_sequence": 0.790833,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999911,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.997786,
+            "project_existing_byte_recall": 0.999854,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999086
+          },
+          "outcome_accuracy": 0.9975,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 696,
+            "exact": 0.91092,
+            "recurrence_anchor_kind_accuracy": 0.995,
+            "recurrence_anchor_value_accuracy": 0.994333,
+            "recurrence_interval_accuracy": 0.9985,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.996
+          }
+        }
+      },
+      {
+        "epoch": 6,
+        "mean_loss": 0.014586,
+        "selection_score": 0.875961,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.9947,
+          "bytes": 433430,
+          "entity_f1": 0.993961,
+          "entity_precision": 0.992508,
+          "entity_recall": 0.995418,
+          "exact_byte_sequence": 0.8475,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999911,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.998735,
+            "project_existing_byte_recall": 0.999854,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999714
+          },
+          "outcome_accuracy": 0.999667,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 701,
+            "exact": 0.904422,
+            "recurrence_anchor_kind_accuracy": 0.994833,
+            "recurrence_anchor_value_accuracy": 0.994667,
+            "recurrence_interval_accuracy": 0.9945,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.995833
+          }
+        }
+      },
+      {
+        "epoch": 7,
+        "mean_loss": 0.008941,
+        "selection_score": 0.915219,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.996572,
+          "bytes": 433430,
+          "entity_f1": 0.996273,
+          "entity_precision": 0.995022,
+          "entity_recall": 0.997528,
+          "exact_byte_sequence": 0.885833,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999911,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.998893,
+            "project_existing_byte_recall": 0.999707,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999829
+          },
+          "outcome_accuracy": 0.999667,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 686,
+            "exact": 0.944606,
+            "recurrence_anchor_kind_accuracy": 0.995667,
+            "recurrence_anchor_value_accuracy": 0.994833,
+            "recurrence_interval_accuracy": 0.999333,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.9995
+          }
+        }
+      },
+      {
+        "epoch": 8,
+        "mean_loss": 0.006319,
+        "selection_score": 0.912246,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.997441,
+          "bytes": 433430,
+          "entity_f1": 0.997193,
+          "entity_precision": 0.99632,
+          "entity_recall": 0.998067,
+          "exact_byte_sequence": 0.904667,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 1.0,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.998656,
+            "project_existing_byte_recall": 0.99978,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999771
+          },
+          "outcome_accuracy": 0.999833,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 686,
+            "exact": 0.919825,
+            "recurrence_anchor_kind_accuracy": 0.995833,
+            "recurrence_anchor_value_accuracy": 0.992,
+            "recurrence_interval_accuracy": 0.9995,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.999
+          }
+        }
+      },
+      {
+        "epoch": 9,
+        "mean_loss": 0.004823,
+        "selection_score": 0.932781,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.997827,
+          "bytes": 433430,
+          "entity_f1": 0.997514,
+          "entity_precision": 0.996868,
+          "entity_recall": 0.998161,
+          "exact_byte_sequence": 0.913667,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 1.0,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.999367,
+            "project_existing_byte_recall": 0.999854,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999829
+          },
+          "outcome_accuracy": 0.999833,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 686,
+            "exact": 0.951895,
+            "recurrence_anchor_kind_accuracy": 0.9955,
+            "recurrence_anchor_value_accuracy": 0.995167,
+            "recurrence_interval_accuracy": 0.999667,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.9995
+          }
+        }
+      },
+      {
+        "epoch": 10,
+        "mean_loss": 0.003397,
+        "selection_score": 0.938408,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.998415,
+          "bytes": 433430,
+          "entity_f1": 0.99825,
+          "entity_precision": 0.997813,
+          "entity_recall": 0.998687,
+          "exact_byte_sequence": 0.933667,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 1.0,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.999288,
+            "project_existing_byte_recall": 0.999927,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999886
+          },
+          "outcome_accuracy": 0.999833,
+          "priority_accuracy": 0.999777,
+          "recurrence": {
+            "claimed_examples": 686,
+            "exact": 0.943149,
+            "recurrence_anchor_kind_accuracy": 0.996333,
+            "recurrence_anchor_value_accuracy": 0.994,
+            "recurrence_interval_accuracy": 0.999667,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.9995
+          }
+        }
+      },
+      {
+        "epoch": 11,
+        "mean_loss": 0.003473,
+        "selection_score": 0.923304,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.997575,
+          "bytes": 433430,
+          "entity_f1": 0.997183,
+          "entity_precision": 0.996379,
+          "entity_recall": 0.997988,
+          "exact_byte_sequence": 0.907833,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 1.0,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.998814,
+            "project_existing_byte_recall": 1.0,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999886
+          },
+          "outcome_accuracy": 1.0,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 686,
+            "exact": 0.938776,
+            "recurrence_anchor_kind_accuracy": 0.995667,
+            "recurrence_anchor_value_accuracy": 0.993667,
+            "recurrence_interval_accuracy": 0.9995,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.9995
+          }
+        }
+      },
+      {
+        "epoch": 12,
+        "mean_loss": 0.003011,
+        "selection_score": 0.931713,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.998353,
+          "bytes": 433430,
+          "entity_f1": 0.998192,
+          "entity_precision": 0.997492,
+          "entity_recall": 0.998892,
+          "exact_byte_sequence": 0.9335,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 1.0,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.999446,
+            "project_existing_byte_recall": 1.0,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999943
+          },
+          "outcome_accuracy": 0.999833,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 685,
+            "exact": 0.929927,
+            "recurrence_anchor_kind_accuracy": 0.995667,
+            "recurrence_anchor_value_accuracy": 0.993,
+            "recurrence_interval_accuracy": 0.9995,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.999333
+          }
+        }
+      },
+      {
+        "epoch": 13,
+        "mean_loss": 0.002817,
+        "selection_score": 0.931659,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.998505,
+          "bytes": 433430,
+          "entity_f1": 0.998281,
+          "entity_precision": 0.99806,
+          "entity_recall": 0.998503,
+          "exact_byte_sequence": 0.934333,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999911,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.998735,
+            "project_existing_byte_recall": 1.0,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999886
+          },
+          "outcome_accuracy": 1.0,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 690,
+            "exact": 0.928986,
+            "recurrence_anchor_kind_accuracy": 0.996,
+            "recurrence_anchor_value_accuracy": 0.993333,
+            "recurrence_interval_accuracy": 0.998833,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.998833
+          }
+        }
+      },
+      {
+        "epoch": 14,
+        "mean_loss": 0.002044,
+        "selection_score": 0.944516,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.998558,
+          "bytes": 433430,
+          "entity_f1": 0.998321,
+          "entity_precision": 0.997888,
+          "entity_recall": 0.998754,
+          "exact_byte_sequence": 0.938667,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 1.0,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.998814,
+            "project_existing_byte_recall": 0.999927,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999886
+          },
+          "outcome_accuracy": 0.999667,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 685,
+            "exact": 0.950365,
+            "recurrence_anchor_kind_accuracy": 0.996167,
+            "recurrence_anchor_value_accuracy": 0.994833,
+            "recurrence_interval_accuracy": 0.999833,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 0.999667
+          }
+        }
+      },
+      {
+        "epoch": 15,
+        "mean_loss": 0.001657,
+        "selection_score": 0.941015,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.999001,
+          "bytes": 433430,
+          "entity_f1": 0.998835,
+          "entity_precision": 0.998656,
+          "entity_recall": 0.999014,
+          "exact_byte_sequence": 0.953667,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 1.0,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.999209,
+            "project_existing_byte_recall": 1.0,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 1.0
+          },
+          "outcome_accuracy": 0.999667,
+          "priority_accuracy": 1.0,
+          "recurrence": {
+            "claimed_examples": 684,
+            "exact": 0.928363,
+            "recurrence_anchor_kind_accuracy": 0.995,
+            "recurrence_anchor_value_accuracy": 0.992,
+            "recurrence_interval_accuracy": 0.999833,
+            "recurrence_strictness_accuracy": 1.0,
+            "recurrence_unit_accuracy": 1.0
+          }
+        }
+      },
+      {
+        "epoch": 16,
+        "mean_loss": 0.001995,
+        "selection_score": 0.864642,
+        "train_examples": 96108,
+        "validation": {
+          "byte_accuracy": 0.994534,
+          "bytes": 433430,
+          "entity_f1": 0.993687,
+          "entity_precision": 0.992087,
+          "entity_recall": 0.995292,
+          "exact_byte_sequence": 0.846,
+          "examples": 6000,
+          "inventory_conditioning": {
+            "context_existing_byte_recall": 0.999911,
+            "context_match_false_field_rate": 0.0,
+            "context_novel_byte_recall": 0.996679,
+            "project_existing_byte_recall": 1.0,
+            "project_match_false_field_rate": 0.0,
+            "project_novel_byte_recall": 0.999886
+          },
+          "outcome_accuracy": 0.9995,
+          "priority_accuracy": 0.999777,
+          "recurrence": {
+            "claimed_examples": 694,
+            "exact": 0.883285,
+            "recurrence_anchor_kind_accuracy": 0.994667,
+            "recurrence_anchor_value_accuracy": 0.992,
+            "recurrence_interval_accuracy": 0.993333,
+            "recurrence_strictness_accuracy": 0.999667,
+            "recurrence_unit_accuracy": 0.998
+          }
+        }
+      }
+    ],
+    "epochs": 16,
+    "examples_per_epoch": 96108,
+    "selected_epoch": 14
+  },
+  "training_code_sha256": "06720650d6b12a0dafa299f69fef8d982f96d8ab6dcac8332574a78d22f978a5",
+  "validation_metrics": {
+    "byte_accuracy": 0.998558,
+    "bytes": 433430,
+    "entity_f1": 0.998321,
+    "entity_precision": 0.997888,
+    "entity_recall": 0.998754,
+    "exact_byte_sequence": 0.938667,
+    "examples": 6000,
+    "inventory_conditioning": {
+      "context_existing_byte_recall": 1.0,
+      "context_match_false_field_rate": 0.0,
+      "context_novel_byte_recall": 0.998814,
+      "project_existing_byte_recall": 0.999927,
+      "project_match_false_field_rate": 0.0,
+      "project_novel_byte_recall": 0.999886
+    },
+    "outcome_accuracy": 0.999667,
+    "priority_accuracy": 1.0,
+    "recurrence": {
+      "claimed_examples": 685,
+      "exact": 0.950365,
+      "recurrence_anchor_kind_accuracy": 0.996167,
+      "recurrence_anchor_value_accuracy": 0.994833,
+      "recurrence_interval_accuracy": 0.999833,
+      "recurrence_strictness_accuracy": 1.0,
+      "recurrence_unit_accuracy": 0.999667
+    }
+  },
+  "weights": {
+    "bytes": 136853,
+    "path": "model.bin",
+    "sha256": "50c487cbe5a4bc1ce6d153dc677c23401cc5d18be8f6d162b57060713906ff9e"
+  }
+}
